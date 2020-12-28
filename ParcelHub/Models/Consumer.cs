@@ -1,4 +1,5 @@
-﻿using ParcelHub.Controllers;
+﻿using Microsoft.AspNetCore.Identity;
+using ParcelHub.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -12,7 +13,12 @@ namespace ParcelHub.Models
         //Each Consumer might have >=0 addresses
         public List<ConsumerAddress> ConsumerAddresses { get; set; }
         public int Id { get; set; }
+
+        [Required]
+        [MaxLength(50)]
         public string LastName { get; set; }
+        [Required]
+        [MaxLength(50)]
         public string FirstName { get; set; }
         public string MobileNumber { get; set; }
         [Key]
