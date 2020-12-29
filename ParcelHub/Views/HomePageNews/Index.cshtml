@@ -10,8 +10,6 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-
-
 <table class="table">
     <thead>
         <tr>
@@ -31,30 +29,72 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Content)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Post)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImageUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Post)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-<div class="HomePageNews" style="border-style:solid; border-width:medium; border:2px solid black; border-radius:8px; position:relative; float:right; display:inline-block;">
-    <h2>What's news?</h2>
-    <p>123</p>
-</div>
+
+<section class="HomePageNews" style="padding:100px 0; display:block;">
+    <div class="container">
+        <div class="NewsRow heading">
+            <div class="LatestNews" style="width:100%;">
+                <h2>Latest News</h2>
+                <hr class="HomePageNewsLine" style="max-width:50px; border-width:4px;">
+            </div>
+        </div>
+        <div class="NewsRow" style="margin-right:-10px; margin-left:-10px;">
+            <div class="News-Slide">
+                <div class="post">
+                    <a href="#"><img src="#"/></a>
+                    <div class="NewsTitle">
+                        <a href="#"><h3 class="News-name">First News!</h3></a>
+                        <div class="info">
+                            Here is first news<br />
+                        </div>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <a href="#"><img src="#" /></a>
+                    <div class="NewsTitle">
+                        <a href="#"><h3 class="News-name">Second News!</h3></a>
+                        <div class="info">
+                            Here is second news<br />
+                        </div>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div class="post">
+                    <a href="#"><img src="#" /></a>
+                    <div class="NewsTitle">
+                        <a href="#"><h3 class="News-name">Third News!</h3></a>
+                        <div class="info">
+                            Here is third news<br />
+                        </div>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
